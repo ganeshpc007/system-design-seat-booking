@@ -1,0 +1,21 @@
+[project]
+name = "system-design-seat-booking"
+version = "0.1.0"
+description = "Runnable experiments for \"How Do You Stop Two People from Booking the Same Seat?\""
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "psycopg[binary,pool]>=3.2",
+]
+
+[project.scripts]
+api = "booking.api:main"
+sim = "booking.sim:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["booking"]
